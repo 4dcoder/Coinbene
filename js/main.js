@@ -1,4 +1,7 @@
 $(function(){
+    // Icons Init
+    feather.replace();
+
     coinbene = new Coinbene("put your apiid key", "put your secret key");
     Coinbene.setDivMessage("main_div", coinbene.ticker("ziberusdt"));
     Coinbene.setDivMessage("main_div", coinbene.orderbook("ziberusdt"));
