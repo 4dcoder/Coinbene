@@ -22,5 +22,5 @@
     "icons" : {
         "128": "images/icon.png"
     },
-    "options_page":"index.html"
+    "options_page":"login.html"
 }

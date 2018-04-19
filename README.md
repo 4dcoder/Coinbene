@@ -12,7 +12,7 @@
 
 * [jQuery](https://jquery.com/);
 
-### Code Example：
+### Code Example
 
 #### HTML
 
@@ -79,7 +79,7 @@ $(function(){
     * `sell-limit`: 卖出；
   * `price`: 币币交易价格；
   * `quantity`: 币币交易数量；
-* `Coinbene.ordersinfo(symbol)`：查询当前委托；
+* `Coinbene.ordersinfo(symbol)`：查询当前所有的委托单；
   * `symbol`: 币币交易类型；
 * `Coinbene.info(orderId)`：查询指定的委托单信息；
   * `orderId`: 委托单的订单`id`；

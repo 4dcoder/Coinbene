@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-cn" ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <title>Coinbene</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">   
+    <link href="css/log.css" rel="stylesheet">
+  </head>
+  
+  <body ng-controller="log">
+    <div class="container text-center margin_top_20">
+      <img class="logo_img" src="" /><span class="title">Coinbene</span>
+    </div>
+
+    <div class="container text-center margin_top_15">
+      <span class="info">Digital Currency Trading</span>
+    </div>
+    
+    <div class="container margin_top_20">
+    
+      <div class="core">
+    
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active " id="reg">
+            <!--Login-->
+            <form name="regForm"  class="inside_form" novalidate>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Username</label>
+                <input type="text" maxlength="35"  class="form-control input-lg" placeholder="Please Input Username" required>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPass">Password</label>
+                <input type="password" minlength="6" maxlength="20" class="form-control input-lg" placeholder="Please Input Password" required>
+              </div>
+              <button type="submit" id="regsub" class="btn btn-danger btn-lg width_100 margin_top_10" ng-click="login_sub();">Login</button>
+            </form>
+          </div>
+        </div>
+        <div class="alert alert-success"  id="ts_success" role="alert" style="margin-top: 10px; display:none;"></div>
+        <div class="alert alert-danger"  id="ts_error" role="alert" style="margin-top: 10px; display:none;"></div>
+    
+        <div class="alert alert-warning" role="alert" style="margin-top: 10px;">
+          使用须知：<br/>
+          1、仅供需要的人士使用；<br/>
+          2、软件使用造成的损失请自行负责；<br/>
+        </div>
+    
+      </div>
+    </div>
+    
+    <script type="text/javascript" src="js/libs/jquery.min.js"></script>
+    <script type="text/javascript" src="js/libs/feather.min.js"></script>
+    <script type="text/javascript" src="js/libs/popper.min.js"></script>
+    <script type="text/javascript" src="js/libs/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/libs/md5.min.js"></script>
+    <script type="text/javascript" src="js/libs/angular.min.js"></script>
+
+    <script type="text/javascript" src="js/login.js"></script>
+
+  </body>
+</html>
