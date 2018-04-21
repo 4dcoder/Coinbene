@@ -10,8 +10,8 @@ class CoinbeneStorage {
             if (!("storage" in data) || !("title" in data["storage"])) {
                 this.storage = {};
                 this.storage["title"] = "Coinbene";
-                this.storage["username"] = "Coinbene";
-                this.storage["password"] = "zengjf";
+                this.storage["username"] = "af5e50fa78a33582b40d245b349b21cc";
+                this.storage["password"] = "b17ddcc9e71730867a2c36057f7e9102";
                 this.sync();
             } else {
                 this.storage = data["storage"];

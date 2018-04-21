@@ -6,11 +6,12 @@ app.controller('log',function($scope){
     var coinbeneStorage = new CoinbeneStorage();
 
     $scope.login_sub = function(){
-        console.log(coinbeneStorage.storage["username"]);
-        console.log(coinbeneStorage.storage["password"]);
 
-        console.log("inside function");
-        // window.location.href = "index.html";
+        if (($scope.username != undefined && coinbeneStorage.storage["username"] == md5($scope.username)) 
+            && ($scope.password != undefined && coinbeneStorage.storage["password"] == md5($scope.password))) {
+            window.location.href = "index.html";
+        }
+
     };
 });
 
