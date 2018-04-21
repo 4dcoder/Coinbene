@@ -89,3 +89,5 @@ $(function(){
 ## Chrome Extension
 
 使用上面提到的[Javascript API](https://github.com/ZengjfOS/Coinbene/tree/master/js/coinbene)进行数据获取，然后进行一些数据分析。
+
+![./images/CoinbeneDCTLoginPage.png](./images/CoinbeneDCTLoginPage.png)
