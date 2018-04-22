@@ -1,4 +1,14 @@
 $(function(){
+
+    var coinbeneStorage = new CoinbeneStorage((storage) => {
+
+        if ((storage["username"] == undefined || storage["username_key"] != md5(storage["username"])) 
+            || (storage["password"] == undefined || storage["username_key"] != md5(storage["username"]))) {
+            window.location.href = "login.html";
+        }
+
+    });
+
     // Icons Init
     feather.replace();
 
