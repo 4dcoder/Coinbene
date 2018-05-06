@@ -21,42 +21,51 @@
       <nav class="col-md-2 d-none d-md-block bg-light sidebar">
         <div class="sidebar-sticky">
           <ul class="nav flex-column">
-            <li class="nav-item">
-              <a class="nav-link active" href="#">
-                <span data-feather="home"></span>
-                Settings
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link " href="#">
-                <span data-feather="arrow-right-circle"></span>
-                Digital Currency
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span data-feather="settings"></span>
-                Trade 
-              </a>
-            </li>
+            <div id="navDiv">
+              <li class="nav-item">
+                <a class="nav-link active" href="#">
+                  <span data-feather="home"></span>
+                  Settings
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="#">
+                  <span data-feather="arrow-right-circle"></span>
+                  Digital Currency
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="settings"></span>
+                  Trade 
+                </a>
+              </li>
+            </div>
           </ul>
 
         </div>
       </nav>
 
       <main role="main" class="col-md-9 col-lg-10 pt-3 px-4">
-        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-          <h1 class="h4">Settings</h1>
-          <div class="btn-toolbar mb-2 mb-md-0">
+        <div id="SettingsDiv" class="">
+            <h1 class="h4">Settings {{config.title}}</h1>
+          <div class="container" id="settings_div">
+            <div class="col-md-6 column">
+              <form>
+                <div class="form-group">
+                  <label for="InputAPIID">APIID</label>
+                  <input class="form-control" id="InputAPIID" aria-describedby="emailHelp" placeholder="Enter APIID" v-model="apiid">
+                </div>
+                <div class="form-group">
+                  <label for="InputSecret">Password</label>
+                  <input type="password" class="form-control" id="InputSecret" placeholder="Enter Password" v-model="secret">
+                </div>
+                <button class="btn btn-primary" v-on:click="saveSettings">Submit</button>
+              </form>
+            </div>
           </div>
         </div>
 
-        <div class="table-responsive">
-          <section class="jumbotron text-center">
-            <div class="container" id="main_div">
-            </div>
-          </section>
-        </div>
       </main>
     </div>
   </div>
@@ -66,7 +75,8 @@
   <script type="text/javascript" src="js/libs/feather.min.js"></script>
   <script type="text/javascript" src="js/libs/popper.min.js"></script>
   <script type="text/javascript" src="js/libs/bootstrap.min.js"></script>
-  <script type="text/javascript" src="js/libs/angular.min.js"></script>
+  <script type="text/javascript" src="js/libs/vue.min.js"></script>
+  <script type="text/javascript" src="js/libs/Chart.bundle.min.js"></script>
 
   <script type="text/javascript" src="js/libs/md5.min.js"></script>
   <script type="text/javascript" src="js/coinbene/HttpMD5Util.js"></script>
@@ -74,6 +84,7 @@
   <script type="text/javascript" src="js/coinbene/Coinbene.js"></script>
 
   <script type="text/javascript" src="js/Storage.js"></script>
+  <script type="text/javascript" src="js/context.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
 
 </body>

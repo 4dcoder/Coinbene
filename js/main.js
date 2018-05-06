@@ -1,17 +1,30 @@
 $(function(){
 
-    var coinbeneStorage = new CoinbeneStorage((storage) => {
-
-        if ((storage["username"] == undefined || storage["username_key"] != md5(storage["username"])) 
-            || (storage["password"] == undefined || storage["username_key"] != md5(storage["username"]))) {
-            window.location.href = "login.html";
-        }
-
-    });
+    context = new Context();
 
     // Icons Init
     feather.replace();
 
+    var vm = new Vue({
+        el: '#SettingsDiv',
+        data: {
+            config:context.config,
+            apiid: "",
+            secret: ""
+        },
+        methods: {
+            saveSettings: function(event) {
+                context.storage.add("apiid", this.apiid);
+                context.storage.add("secret", this.secret);
+                context.storage.sync(function () {
+                    console.log("print current storage info:");
+                    console.log(context.storage.storage);
+                });
+            }
+        }
+    })
+
+    /*
     coinbene = new Coinbene("put your apiid key", "put your secret key");
     Coinbene.setDivMessage("main_div", coinbene.ticker("ziberusdt"));
     Coinbene.setDivMessage("main_div", coinbene.orderbook("ziberusdt"));
@@ -21,4 +34,5 @@ $(function(){
     Coinbene.setDivMessage("main_div", coinbene.ordersinfo("ziberusdt"));
     Coinbene.setDivMessage("main_div", coinbene.info("S180418185128711694601"));
     Coinbene.setDivMessage("main_div", coinbene.cancel("S180418185128711694601"));
+    */
 });
