@@ -12,7 +12,7 @@ class CoinbeneSpotAPI {
         var TICKER_RESOURCE = "/v1/market/ticker";
         var params={};
 
-        if (symbol == "") {
+        if (symbol != "") {
             params["symbol"] = symbol;
         } else {
             params["symbol"] = "all";
@@ -45,7 +45,7 @@ class CoinbeneSpotAPI {
             return this.httpMD5Util.httpGet(this.url, TRADES_RESOURCE, params, success, error);
         }
     }
-    
+
     // 获取用户现货账户信息
     balance(success, error) {
         var USERINFO_RESOURCE = "/v1/trade/balance";
@@ -71,7 +71,7 @@ class CoinbeneSpotAPI {
         if (quantity != "") {
             params["quantity"] = quantity;
         }
-            
+
         return this.httpMD5Util.httpPost(this.url, TRADE_RESOURCE, params, success, error);
     }
 
@@ -84,7 +84,7 @@ class CoinbeneSpotAPI {
 
         return this.httpMD5Util.httpPost(this.url, CANCEL_ORDER_RESOURCE, params, success, error);
     }
-        
+
     // 现货订单信息查询
     info(orderId, success, error) {
         var ORDER_INFO_RESOURCE = "/v1/trade/order/info";
@@ -105,4 +105,3 @@ class CoinbeneSpotAPI {
         return this.httpMD5Util.httpPost(this.url, ORDERS_INFO_RESOURCE, params, success, error);
     }
 }
-
